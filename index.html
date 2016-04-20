@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='goldRush'>
+   <head>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js"></script>
+       <link rel="stylesheet" href="main.css" type="text/css" />
+   </head>
+   <body ng-controller="troller">
+       <!--need link to map, didnt have it-->
+       <img src=''class="map" ng-click='drop($event)'>
+       <!--this div contains marker-->
+       <div class='marker-wrapper' ng-repeat='marker in markers'>
+           <!--need img or marker-->
+           <img src=""></img>
+           <!--this div will be used for note pop-up-->
+           <div></div>
+       </div>
+       <script type="text/javascript" src="main.js"></script>
+   </body>
+</html>

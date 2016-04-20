@@ -1,0 +1,12 @@
+.marker-container {
+  position: relative;
+}
+
+.map {
+  max-width: 100%;
+  position: absolute;
+}
+
+.marker {
+  position: absolute;
+}
