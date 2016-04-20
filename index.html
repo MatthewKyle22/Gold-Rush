@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html ng-app='goldRush'>
    <head>
@@ -5,15 +6,18 @@
        <link rel="stylesheet" href="main.css" type="text/css" />
    </head>
    <body ng-controller="troller">
-       <!--need link to map, didnt have it-->
-       <img src=''class="map" ng-click='drop($event)'>
-       <!--this div contains marker-->
-       <div class='marker-wrapper' ng-repeat='marker in markers'>
-           <!--need img or marker-->
-           <img src=""></img>
-           <!--this div will be used for note pop-up-->
-           <div></div>
-       </div>
+      <div ng-click = 'drop()' class = 'container'>
+           <div class = 'popUp'>
+               <h3>Please add note</h3>
+               <input ng-model='popUpTextArea'>
+               <button ng-click = 'submitNote'>Submit</button>
+           </div>
+           
+          <img src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true"></img>
+      </div>
+      
+          <div ng-click = 'removeMarker($index, $event)'class="marker" ng-repeat="mark in marker" style="top:{{mark.y-6}}px;left:{{mark.x-6}}px;"></div>
+     
        <script type="text/javascript" src="main.js"></script>
    </body>
 </html>

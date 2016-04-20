@@ -3,24 +3,35 @@ angular.module("goldRush", []);
 angular.module('goldRush')
    .controller('troller', ["$scope", findGold]);
       function findGold($scope) {
-   //array stores a list of marker objects
-         $scope.markers =[];
-   //boolean hopefully to help with note div
-         $scope.writeNote = false;
-   
-   //Function places marker on map
-   $scope.drop = function(event) {
-     $scope.marker = {
-        x : event.pageX,
-        y : event.pageY,
-        note : "",
-        showNote: false
-      };
-   //marker gets pushed to the marker array
-   $scope.markers.push($scope.marker);
-    };
-   //removes marker from array & map
-   $scope.removeMarker = function(index) {
-      $scope.markers.splice(index,1)
-    }
+         //array holds marker cordinates 
+         $scope.marker=[];
+         //stores note
+         
+         //addes mark
+         $scope.drop = function(){
+           var x=event.pageX;
+           var y=event.pageY;
+         //var note =prompt(' Add note', '');
+            // console.log(x,y);
+           
+            
+            
+               // $scope.submitNote = function () {
+                  //pushing cords into marker arrays
+                  $scope.marker.push({"x":event.pageX,"y":event.pageY})   
+                  console.log($scope.marker)
+                  
+                  // $scope.notes=!$scope.notes
+               
+            
+         
+         //removes mark
+         $scope.removeMarker = function(index, event) {
+      $scope.marker.splice(index, 1)
+      }
+   }
 }
+
+//  $scope.fireInstructor = function(index, event){
+//           console.log('Yafya`d', index, event)
+//           $scope.instructors.splice(index, 1)
